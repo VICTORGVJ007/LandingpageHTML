@@ -68,7 +68,7 @@
                     <li>Pago Mensual</li>
                 </ul>
                 <div class="price">$15</div>
-                <button aria-label="Más información sobre el sistema básico">Solicitar</button>
+                <button onclick="scrollToContact()">Solicitar</button>
             </div>
             <div class="pricing-card">
                 <h3>Sistema de Inventario + Soporte Técnico</h3>
@@ -79,24 +79,53 @@
                     <li>Pago Mensual</li>
                 </ul>
                 <div class="price">$35</div>
-                <button aria-label="Más información sobre el sistema con soporte técnico">Solicitar</button>
+                <button onclick="scrollToContact()">Solicitar</button>
             </div>
         </div>
     </section>
 
     <!-- Formulario de Contacto -->
-<section class="contact" id="contacto">
-    <h2>Contacta con nosotros</h2>
-    <form id="contactForm" action="/send_message" method="post">
-        <label for="name"></label>
-        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-        <label for="email"></label>
-        <input type="email" id="email" name="email" placeholder="Tu correo" required />
-        <label for="message"></label>
-        <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-</section>
+    <section class="contact" id="contacto">
+        <h2>Solicita tu Plan de Sistema de Inventario</h2>
+        <form id="contactForm" action="/send_message" method="post">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+
+            <label for="phone"></label>
+            <input type="tel" id="phone" name="phone" placeholder="Tu número de teléfono (opcional)" />
+
+            <label for="company"></label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" required />
+
+            <label for="industry"></label>
+            <select id="industry" name="industry" required>
+                <option value="" disabled selected>Selecciona tu sector</option>
+                <option value="retail">Retail</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="manufactura">Manufactura</option>
+                <option value="otros">Otros</option>
+            </select>
+
+            <label for="plan"></label>
+            <select id="plan" name="plan" required>
+                <option value="" disabled selected>Selecciona un plan</option>
+                <option value="basico">Sistema Básico</option>
+                <option value="soporte">Sistema + Soporte Técnico</option>
+            </select>
+
+            <label for="inventory-size"></label>
+            <input type="number" id="inventory-size" name="inventory-size" placeholder="Número de productos a gestionar" required />
+
+            <label for="comments"></label>
+            <textarea id="comments" name="comments" placeholder="Comentarios o requerimientos adicionales"></textarea>
+
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </section>
+
     <!-- Pie de Página -->
     <footer>
         <p>© 2024 CODE VAYS. Todos los derechos reservados.</p>
@@ -105,11 +134,16 @@
 
     <!-- Script -->
     <script>
-        // Desplazamiento suave
+        // Desplazamiento suave para el botón de la sección principal
         document.querySelector('.cta-button').addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
         });
+
+        // Desplazamiento suave para los botones de las tarjetas de precios
+        function scrollToContact() {
+            document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
+        }
 
         // Confirmación al enviar el formulario
         document.querySelector('form').addEventListener('submit', function (e) {
@@ -117,17 +151,6 @@
             alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
             this.reset();
         });
-
-        ////// Actualizar precios con descuento
-        ////document.addEventListener('DOMContentLoaded', function () {
-        ////    const priceCards = document.querySelectorAll('.price');
-        ////    const discount = 0.8; // 20% de descuento
-        ////    priceCards.forEach((card) => {
-        ////        const originalPrice = parseFloat(card.textContent.replace('$', ''));
-        ////        const discountedPrice = originalPrice * discount;
-        ////        card.textContent = `$${discountedPrice.toFixed(2)}`;
-        ////    });
-        //});
 
         // Efecto de hover en las tarjetas de precios
         const pricingCards = document.querySelectorAll('.pricing-card');

@@ -569,3 +569,260 @@ button, .cta-button {
         opacity: 0;
     }
 }
+
+/* Estilo general del formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo de las etiquetas y selectores */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo de las listas desplegables */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    appearance: none; /* Oculta el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2010%205%27%3E%3Cpolygon%20fill%3D%27%23999%27%20points%3D%270%2C0%2010%2C0%205%2C5%27/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+    /* Efecto al pasar sobre el selector */
+    select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+/* Espaciado entre elementos del formulario */
+form > * {
+    margin-bottom: 20px;
+}
+
+/* Estilo del contenedor de cada campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* Colores principales */
+:root {
+    --gold: #C9A365; /* Dorado del logo */
+    --dark-blue: #333333; /* Negro o azul oscuro */
+    --white: #FFFFFF; /* Blanco */
+    --accent-dark: #1F1F1F; /* Tonos más oscuros */
+    --light-gray: #E0E0E0; /* Gris claro para mejorar contraste */
+}
+
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    background: var(--gold);
+    color: var(--white);
+    padding: 40px 20px;
+    border-bottom: 4px solid var(--dark-blue);
+}
+
+    header h1 {
+        font-size: 3em;
+        font-weight: bold;
+        margin: 10px 0;
+        text-transform: uppercase;
+        color: var(--dark-blue); /* Títulos más oscuros */
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin: 20px 0;
+        color: var(--white); /* Texto descriptivo más visible */
+    }
+
+    header .cta-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: var(--dark-blue);
+        color: var(--gold);
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        border: 2px solid var(--gold);
+        transition: all 0.3s ease;
+    }
+
+        header .cta-button:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            border: 2px solid var(--dark-blue);
+        }
+
+/* Características */
+.features {
+    background-color: var(--gold);
+    color: var(--white);
+    padding: 50px 20px;
+}
+
+    .features h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        color: var(--dark-blue); /* Títulos de sección más visibles */
+    }
+
+    .features ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+    }
+
+    .features li {
+        background-color: var(--white);
+        color: var(--dark-blue);
+        padding: 20px;
+        flex: 1 1 calc(30% - 20px);
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .features li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+/* Precios */
+.pricing-section {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 50px 20px;
+}
+
+    .pricing-section h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        color: var(--gold); /* Títulos de sección más visibles */
+    }
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: var(--white);
+    color: var(--dark-blue);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    flex: 1 1 calc(30% - 20px);
+    max-width: calc(30% - 20px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .pricing-card .price {
+        font-size: 2.5em;
+        color: var(--gold);
+        margin: 20px 0;
+    }
+
+/* Contacto */
+.contact {
+    padding: 50px 20px;
+    background-color: var(--white);
+}
+
+    .contact h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        color: var(--dark-blue);
+    }
+
+    .contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact input,
+    .contact button {
+        width: calc(100% - 40px);
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid var(--gold);
+        border-radius: 5px;
+    }
+
+    .contact button {
+        background-color: var(--gold);
+        color: var(--white);
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .contact button:hover {
+            background-color: var(--dark-blue);
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+/* Footer */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+
