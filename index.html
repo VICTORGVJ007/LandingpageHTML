@@ -7,13 +7,15 @@
     <meta name="description" content="CODE VAYS: Soluciones de software para optimizar y gestionar inventarios en pequeñas y medianas empresas.">
     <meta name="author" content="CODE VAYS">
     <link rel="stylesheet" href="styles.css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Cargar el SDK de EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
         <div class="logo-container">
-            <img src="images/imalogo em.png" alt="Logo de CODE VAYS">
+            <img src="images/imalogo_em.png" alt="Logo de CODE VAYS" />
         </div>
         <h1>Bienvenido a CODE VAYS</h1>
         <p>Soluciones de software para la optimización y gestión de inventarios en pequeñas y medianas empresas.</p>
@@ -34,38 +36,22 @@
     <!-- Galería de Imágenes -->
     <section class="gallery">
         <h2>Vea cómo CODE VAYS mejora la gestión de inventarios</h2>
-        <p>Con nuestro sistema de control de inventarios, optimice la gestión de productos de su negocio de manera sencilla y eficiente. ¡Descubra lo fácil que es empezar!</p>
         <div class="gallery-images">
             <div class="image-item">
-                <img src="images/produc.png" alt="producto">
+                <img src="images/produc.png" alt="Gestión de Inventarios Simplificada" />
                 <p>Gestión de Inventarios Simplificada</p>
             </div>
             <div class="image-item">
-                <img src="images/tiempo.png" alt="Visualización en Tiempo Real">
+                <img src="images/tiempo.png" alt="Visualización de Datos en Tiempo Real" />
                 <p>Visualización de Datos en Tiempo Real</p>
             </div>
             <div class="image-item">
-                <img src="images/sis.png" alt="Optimización de Recursos">
+                <img src="images/sis.png" alt="Optimización de Recursos" />
                 <p>Optimización de Recursos y Productos</p>
-            </div>
-            <div class="image-item">
-                <img src="images/fede.png" alt="Estrategias">
-                <p> Estrategias a implementar</p>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Beneficios -->
-    <section class="customer-benefits">
-        <h2>Transforma la Gestión de tu Inventario</h2>
-        <p>CODE VAYS ofrece soluciones accesibles y fáciles de implementar para pequeñas y medianas empresas que buscan optimizar su gestión de inventarios. Con nuestra plataforma, tendrás control total sobre tus productos, maximizarás la eficiencia y mejorarás la toma de decisiones.</p>
-        <ul>
-            <li>+ Control eficiente de productos</li>
-            <li>+ Reducción de costos operativos</li>
-            <li>+ Acceso remoto a tu inventario</li>
-            <li>+ Interfaz intuitiva y fácil de usar</li>
-        </ul>
-    </section>
     <!-- Sección de Precios -->
     <section class="pricing-section">
         <h2>Nuestros Planes</h2>
@@ -78,7 +64,7 @@
                     <li>Interfaz intuitiva</li>
                 </ul>
                 <div class="price">$300</div>
-                <button>Más Información</button>
+                <button aria-label="Más información sobre el sistema básico">Más Información</button>
             </div>
             <div class="pricing-card">
                 <h3>Sistema de Inventario + Soporte Técnico</h3>
@@ -88,39 +74,21 @@
                     <li>Asistencia personalizada</li>
                 </ul>
                 <div class="price">$700</div>
-                <button>Más Información</button>
+                <button aria-label="Más información sobre el sistema con soporte técnico">Más Información</button>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Llamada a la Acción (CTA) -->
-    <section class="cta">
-        <h2>¿Estás listo para mejorar la gestión de tu inventario?</h2>
-        <p>Solicita una demostración gratuita y descubre cómo CODE VAYS puede ayudarte a transformar la forma en que gestionas tu negocio.</p>
-        <a href="#contacto" class="cta-button">Solicita una Demo</a>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="testimonials">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <div class="testimonial">
-            <p>"Gracias a CODE VAYS, hemos optimizado nuestra gestión de inventarios y reducido significativamente los errores. ¡Altamente recomendado!"</p>
-            <cite>- Juan Pérez, CEO de Tienda XYZ</cite>
-        </div>
-        <div class="testimonial">
-            <p>"La implementación fue rápida y fácil. Ahora tenemos acceso en tiempo real a nuestro inventario, ¡es una herramienta indispensable!"</p>
-            <cite>- María López, Directora de Operaciones, Empresa ABC</cite>
         </div>
     </section>
 
     <!-- Formulario de Contacto -->
     <section class="contact" id="contacto">
         <h2>Contacta con nosotros</h2>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo" required>
-            <textarea name="message" placeholder="Tu mensaje" required></textarea>
+        <form id="contactForm" action="#" method="post">
+            <label for="name">Tu nombre:</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+            <label for="email">Tu correo:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo" required />
+            <label for="message">Tu mensaje:</label>
+            <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
@@ -128,7 +96,47 @@
     <!-- Pie de Página -->
     <footer>
         <p>© 2024 CODE VAYS. Todos los derechos reservados.</p>
-        <p>Desarrollando soluciones de software para tu negocio.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Inicializa EmailJS con tu user_id (obtén este valor desde tu cuenta de EmailJS)
+        emailjs.init("your_user_id");  // Sustituye "your_user_id" por el ID de tu usuario en EmailJS
+
+        // Desplazamiento suave
+        document.querySelector('.cta-button').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Validación y mensaje del formulario
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();  // Evita el envío por defecto del formulario
+
+                // Obtiene los valores del formulario
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+
+                // Envía el correo usando EmailJS
+                emailjs.send("your_service_id", "your_template_id", {
+                    name: name,
+                    email: email,
+                    message: message
+                })
+                    .then(function (response) {
+                        console.log('Mensaje enviado', response);
+                        alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
+                        contactForm.reset();  // Resetea el formulario después del envío
+                    }, function (error) {
+                        console.error('Error al enviar el mensaje', error);
+                        alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo nuevamente.');
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
