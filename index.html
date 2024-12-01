@@ -8,14 +8,12 @@
     <meta name="author" content="CODE VAYS">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Cargar el SDK de EmailJS -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
         <div class="logo-container">
-            <img src="images/imalogo_em.png" alt="Logo de CODE VAYS" />
+            <img src="images/imalogo em.png" alt="Logo de CODE VAYS" />
         </div>
         <h1>Bienvenido a CODE VAYS</h1>
         <p>Soluciones de software para la optimización y gestión de inventarios en pequeñas y medianas empresas.</p>
@@ -36,6 +34,7 @@
     <!-- Galería de Imágenes -->
     <section class="gallery">
         <h2>Vea cómo CODE VAYS mejora la gestión de inventarios</h2>
+        <p>Con nuestro sistema de control de inventarios, optimice la gestión de productos de su negocio de manera sencilla y eficiente. ¡Descubra lo fácil que es empezar!</p>
         <div class="gallery-images">
             <div class="image-item">
                 <img src="images/produc.png" alt="Gestión de Inventarios Simplificada" />
@@ -48,6 +47,10 @@
             <div class="image-item">
                 <img src="images/sis.png" alt="Optimización de Recursos" />
                 <p>Optimización de Recursos y Productos</p>
+            </div>
+            <div class="image-item">
+                <img src="images/fede.png" alt="Estrategias a implementar" />
+                <p>Estrategias a implementar</p>
             </div>
         </div>
     </section>
@@ -80,61 +83,60 @@
     </section>
 
     <!-- Formulario de Contacto -->
-    <section class="contact" id="contacto">
-        <h2>Contacta con nosotros</h2>
-        <form id="contactForm" action="#" method="post">
-            <label for="name">Tu nombre:</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
-            <label for="email">Tu correo:</label>
-            <input type="email" id="email" name="email" placeholder="Tu correo" required />
-            <label for="message">Tu mensaje:</label>
-            <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
+<section class="contact" id="contacto">
+    <h2>Contacta con nosotros</h2>
+    <form id="contactForm" action="/send_message" method="post">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required />
+        <label for="message"></label>
+        <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
     <!-- Pie de Página -->
     <footer>
         <p>© 2024 CODE VAYS. Todos los derechos reservados.</p>
+        <p>Desarrollando soluciones de software para tu negocio.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Script -->
     <script>
-        // Inicializa EmailJS con tu user_id (obtén este valor desde tu cuenta de EmailJS)
-        emailjs.init("your_user_id");  // Sustituye "your_user_id" por el ID de tu usuario en EmailJS
-
         // Desplazamiento suave
         document.querySelector('.cta-button').addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector('#contacto').scrollIntoView({ behavior: 'smooth' });
         });
 
-        // Validación y mensaje del formulario
+        // Confirmación al enviar el formulario
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Actualizar precios con descuento
         document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();  // Evita el envío por defecto del formulario
+            const priceCards = document.querySelectorAll('.price');
+            const discount = 0.8; // 20% de descuento
+            priceCards.forEach((card) => {
+                const originalPrice = parseFloat(card.textContent.replace('$', ''));
+                const discountedPrice = originalPrice * discount;
+                card.textContent = `$${discountedPrice.toFixed(2)}`;
+            });
+        });
 
-                // Obtiene los valores del formulario
-                const formData = new FormData(contactForm);
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const message = formData.get('message');
-
-                // Envía el correo usando EmailJS
-                emailjs.send("your_service_id", "your_template_id", {
-                    name: name,
-                    email: email,
-                    message: message
-                })
-                    .then(function (response) {
-                        console.log('Mensaje enviado', response);
-                        alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
-                        contactForm.reset();  // Resetea el formulario después del envío
-                    }, function (error) {
-                        console.error('Error al enviar el mensaje', error);
-                        alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo nuevamente.');
-                    });
+        // Efecto de hover en las tarjetas de precios
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        pricingCards.forEach((card) => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'scale(1.05)';
+                card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = 'none';
             });
         });
     </script>
