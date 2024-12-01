@@ -65,9 +65,10 @@
                     <li>Gestión completa de inventarios</li>
                     <li>Reportes detallados</li>
                     <li>Interfaz intuitiva</li>
+                    <li>Pago Mensual</li>
                 </ul>
-                <div class="price">$300</div>
-                <button aria-label="Más información sobre el sistema básico">Más Información</button>
+                <div class="price">$15</div>
+                <button aria-label="Más información sobre el sistema básico">Solicitar</button>
             </div>
             <div class="pricing-card">
                 <h3>Sistema de Inventario + Soporte Técnico</h3>
@@ -75,9 +76,10 @@
                     <li>Incluye todo lo del sistema básico</li>
                     <li>Soporte técnico 24/7</li>
                     <li>Asistencia personalizada</li>
+                    <li>Pago Mensual</li>
                 </ul>
-                <div class="price">$700</div>
-                <button aria-label="Más información sobre el sistema con soporte técnico">Más Información</button>
+                <div class="price">$35</div>
+                <button aria-label="Más información sobre el sistema con soporte técnico">Solicitar</button>
             </div>
         </div>
     </section>
@@ -116,16 +118,16 @@
             this.reset();
         });
 
-        // Actualizar precios con descuento
-        document.addEventListener('DOMContentLoaded', function () {
-            const priceCards = document.querySelectorAll('.price');
-            const discount = 0.8; // 20% de descuento
-            priceCards.forEach((card) => {
-                const originalPrice = parseFloat(card.textContent.replace('$', ''));
-                const discountedPrice = originalPrice * discount;
-                card.textContent = `$${discountedPrice.toFixed(2)}`;
-            });
-        });
+        ////// Actualizar precios con descuento
+        ////document.addEventListener('DOMContentLoaded', function () {
+        ////    const priceCards = document.querySelectorAll('.price');
+        ////    const discount = 0.8; // 20% de descuento
+        ////    priceCards.forEach((card) => {
+        ////        const originalPrice = parseFloat(card.textContent.replace('$', ''));
+        ////        const discountedPrice = originalPrice * discount;
+        ////        card.textContent = `$${discountedPrice.toFixed(2)}`;
+        ////    });
+        //});
 
         // Efecto de hover en las tarjetas de precios
         const pricingCards = document.querySelectorAll('.pricing-card');
