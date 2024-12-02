@@ -13,11 +13,11 @@
     <!-- Encabezado -->
     <header>
         <div class="logo-container">
-            <img src="images/imalogo em.png" alt="Logo de CODE VAYS" />
+            <img src="images/produc.png" alt="Logo de CODE VAYS" />
         </div>
         <h1>Bienvenido a CODE VAYS</h1>
         <p>Soluciones de software para la optimización y gestión de inventarios en pequeñas y medianas empresas.</p>
-        <a href="#contacto" class="cta-button">Solicita una Demo Gratis</a>
+        <a href="#contacto" class="cta-button">Solicitar servicio</a>
     </header>
 
     <!-- Sección de Características -->
@@ -36,10 +36,7 @@
         <h2>Vea cómo CODE VAYS mejora la gestión de inventarios</h2>
         <p>Con nuestro sistema de control de inventarios, optimice la gestión de productos de su negocio de manera sencilla y eficiente. ¡Descubra lo fácil que es empezar!</p>
         <div class="gallery-images">
-            <div class="image-item">
-                <img src="images/produc.png" alt="Gestión de Inventarios Simplificada" />
-                <p>Gestión de Inventarios Simplificada</p>
-            </div>
+
             <div class="image-item">
                 <img src="images/tiempo.png" alt="Visualización de Datos en Tiempo Real" />
                 <p>Visualización de Datos en Tiempo Real</p>
@@ -65,21 +62,22 @@
                 <ul>
                     <li>Gestión completa de inventarios</li>
                     <li>Reportes detallados</li>
-                    <li>Interfaz intuitiva</li>
+                    <li>Interfaz perzonalizada</li>
                     <li>Pago Mensual</li>
                 </ul>
-                <div class="price">$15</div>
+                <div class="price">$100</div>
                 <button onclick="scrollToContact()">Solicitar</button>
             </div>
             <div class="pricing-card">
                 <h3>Sistema de Inventario + Soporte Técnico</h3>
                 <ul>
-                    <li>Incluye todo lo del sistema básico</li>
-                    <li>Soporte técnico 24/7</li>
+                    <li>Gestion completa de inventario</li>
+                    <li></li>
+                    <li>Soporte técnico</li>
                     <li>Asistencia personalizada</li>
                     <li>Pago Mensual</li>
                 </ul>
-                <div class="price">$35</div>
+                <div class="price">$150</div>
                 <button onclick="scrollToContact()">Solicitar</button>
             </div>
         </div>
@@ -90,35 +88,33 @@
         <h2>Solicita tu Plan de Sistema de Inventario</h2>
         <form id="contactForm" action="/send_message" method="post">
             <label for="name"></label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+            <input type="text" id="name" name="name" placeholder="Nombre completo" required />
 
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required />
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required />
 
             <label for="phone"></label>
-            <input type="tel" id="phone" name="phone" placeholder="Tu número de teléfono (opcional)" />
+            <input type="tel" id="phone" name="phone" placeholder="Numero de teléfono" />
 
             <label for="company"></label>
-            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" required />
+            <input type="text" id="company" name="company" placeholder="Nombre de la empresa" required />
 
             <label for="industry"></label>
             <select id="industry" name="industry" required>
-                <option value="" disabled selected>Selecciona tu sector</option>
-                <option value="retail">Retail</option>
-                <option value="alimentos">Alimentos</option>
-                <option value="manufactura">Manufactura</option>
-                <option value="otros">Otros</option>
+                <option value="" disabled selected>Selecciona el tamaño de la empresa</option>
+                <option value="retail">Pequeña empresa</option>
+                <option value="alimentos">Mediana empresa</option>
             </select>
+
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Giro de negocio de tu empresa" required />
 
             <label for="plan"></label>
             <select id="plan" name="plan" required>
-                <option value="" disabled selected>Selecciona un plan</option>
-                <option value="basico">Sistema Básico</option>
-                <option value="soporte">Sistema + Soporte Técnico</option>
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="basico">Sistema de control de inventario basico</option>
+                <option value="soporte">Sistema de control de inventario + Soporte Técnico</option>
             </select>
-
-            <label for="inventory-size"></label>
-            <input type="number" id="inventory-size" name="inventory-size" placeholder="Número de productos a gestionar" required />
 
             <label for="comments"></label>
             <textarea id="comments" name="comments" placeholder="Comentarios o requerimientos adicionales"></textarea>
