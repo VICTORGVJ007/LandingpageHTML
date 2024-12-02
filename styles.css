@@ -346,8 +346,69 @@ header h1, header p {
             transform: scale(1.1) translateX(5px) translateY(5px); /* Desplaza la imagen ligeramente hacia la derecha y hacia abajo */
         }
 
-/* Estilos responsivos */
+/* ========================
+   Estilos Generales
+======================== */
+
+
+/* ========================
+   Encabezado
+======================== */
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #000; /* Fondo negro del encabezado */
+}
+
+/* ========================
+   Logo
+======================== */
+.logo-container img {
+    max-width: 40%;
+    height: auto; /* Mantiene la proporción */
+}
+
+/* ========================
+   Textos (Títulos y Párrafos)
+======================== */
+h1 {
+    font-size: 2rem;
+  
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1rem;
+   
+    margin: 10px 0;
+}
+
+/* ========================
+   Botón Principal
+======================== */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000; /* Texto negro */
+    background-color: #f5d47f; /* Color del botón basado en la imagen */
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e4c169; /* Oscurece ligeramente al pasar el cursor */
+}
+
+/* ========================
+   Estilos Responsivos
+======================== */
 @media (max-width: 768px) {
+    .logo-container img {
+        max-width: 50%;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
@@ -364,7 +425,7 @@ header h1, header p {
 
 @media (max-width: 480px) {
     .logo-container img {
-        width: 80%; /* Reduce el tamaño de la imagen en pantallas muy pequeñas */
+        width: 80%;
     }
 
     h1 {
